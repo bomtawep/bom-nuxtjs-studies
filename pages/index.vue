@@ -9,4 +9,10 @@
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig()
+// import('~/assets/css/main.css')
 </script>
+<style>
+h1 {
+  font-family: 'FarAwayGalaxy', sans-serif;
+}
+</style>
