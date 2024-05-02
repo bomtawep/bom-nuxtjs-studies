@@ -11,18 +11,42 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '123',
     public: {
-      apiBase: '/api'
+      apiBase: process.env.NEXT_PUBLIC_API_URL,
     }
   },
+  modules: ['@nuxt/ui'],
+  // css: ['~/assets/css/main.css'],
+  // SEO and Meta
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+    pageTransition: { name: 'page', mode: 'out-in' },       // pageTransition: flase to disable
+    // pageTransition: {
+    //   name: 'rotate'
+    // }
+    layoutTransition: { name: 'layout', mode: 'out-in' },   // layoutTransition: flase to disable
+  },
+  experimental: {
+    viewTransition: true
+  },
   // Pass vite options
-  // vite: {
+  vite: {
   //   vue: {
   //     customElement: true
   //   },
   //   vueJsx: {
   //     mergeProps: true
   //   }
-  // },
+  //   css: {
+  //     preprocessorOptions: {
+  //       scss: {
+  //         additionalData: '@use "~/assets/_colors.scss" as *;'
+  //       }
+  //     }
+  //   },
+  },
   // Pass webpack options
   // webpack: {
   //   loaders: {
